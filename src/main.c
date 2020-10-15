@@ -8,6 +8,6 @@ int main(int argc, const char *argv[])
     printf("is %d\n", a+b);
     printf("exit 0!\n");
 
-    //char *data = malloc(100);
+    char *data = malloc(100);
     return 0;
 }
