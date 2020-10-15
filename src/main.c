@@ -11,5 +11,10 @@ int main(int argc, const char *argv[])
     printf("exit 0!\n");
 
     char *data = malloc(100);
+    if (data) {
+        char *a = malloc(100);
+    }
+    free(data);
+
     return 0;
 }

@@ -1,6 +1,15 @@
 
 add_executable(run main.c)
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+#else()
+#    list(APPEND flags "-fPIC" "-Wall")
+#    target_compile_options(run PRIVATE ${flags})
+endif()
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+
+
 MESSAGE(STATUS "Hello This is BINARY dir " ${PROJECT_BINARY_DIR})
 MESSAGE(STATUS "Hello This is SOURCE dir " ${PROJECT_SOURCE_DIR})
 
