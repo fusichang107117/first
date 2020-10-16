@@ -7,7 +7,7 @@ variables:
 build_all:
   stage: build
   script:
-    - ./build.sh
+    - ./build_all.sh
   tags:
     - build
 
