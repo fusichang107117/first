@@ -1,0 +1,13 @@
+stages:
+  - build
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+build_all:
+  stage: build
+  script:
+    - ./build.sh
+  tags:
+    - build
+
