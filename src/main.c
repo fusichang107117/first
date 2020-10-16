@@ -12,7 +12,7 @@ int main(int argc, const char *argv[])
 
     char *data = malloc(100);
     if (data) {
-        char *a = malloc(100);
+        //char *a = malloc(100);
     }
     free(data);
 
