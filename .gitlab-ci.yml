@@ -1,13 +1,15 @@
-stages:
-  - build
+image: miio/x86-default:latest
+
+before_script:
+		- git checkout -B $CI_COMMIT_REF_NAME
+
+after_script:
+		- echo "Done."
 
 variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+		GIT_STRATEGY: fetch
+		GIT_SUBMODULE_STRATEGY: recursive
 
 build_all:
-  stage: build
-  script:
-    - ./build_all.sh
-  tags:
-    - build
-
+		script:
+			- ./build_all.sh
