@@ -22,11 +22,14 @@ add_test(test_run2 run 1 3)
 set_tests_properties(test_run1 PROPERTIES PASS_REGULAR_EXPRESSION "is 3")
 set_tests_properties(test_run2 PROPERTIES PASS_REGULAR_EXPRESSION "is 4")
 
-ADD_CUSTOM_TARGET(memcheck
-    COMMAND cp ${PROJECT_SOURCE_DIR}/DartConfiguration.tcl ./
-    COMMAND sed -i.bak s+/usr/bin/valgrind+`which valgrind`+ DartConfiguration.tcl
-    COMMAND ctest -O memcheck.log -D ExperimentalMemCheck
-    COMMAND tail -n1 memcheck.log | grep 'Memory checking results:' > /dev/null
-    COMMAND rm -f memcheck.log
-    COMMAND mv DartConfiguration.tcl.bak DartConfiguration.tcl
-)
+#ADD_CUSTOM_TARGET(memcheck
+#    COMMAND cp ${PROJECT_SOURCE_DIR}/DartConfiguration.tcl ./
+#    COMMAND sed -i.bak s+/usr/bin/valgrind+`which valgrind`+ DartConfiguration.tcl
+#    COMMAND ctest -O memcheck.log -D ExperimentalMemCheck
+#    COMMAND tail -n1 memcheck.log | grep 'Memory checking results:' > /dev/null
+#    COMMAND rm -f memcheck.log
+#    COMMAND mv DartConfiguration.tcl.bak DartConfiguration.tcl
+#)
+
+#find_program(MEMORYCHECK_COMMAND NAMES valgrind)
+#set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
