@@ -8,4 +8,4 @@ cmake -D CMAKE_BUILD_TYPE=Debug ..
 make
 make install
 make test
-make memcheck
+#make memcheck
